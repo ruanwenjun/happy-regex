@@ -13,27 +13,27 @@ public class RStringTest {
 	@Test
 	public void anyChineseTest() {
 		String anyChinese = RString.ANY_CHINESE;
-		boolean matches = "中国".matches(anyChinese);
+		boolean matches = "中".matches(anyChinese);
 		assertTrue(matches);
-		boolean matches1 = "chinese".matches(anyChinese);
+		boolean matches1 = "c".matches(anyChinese);
 		assertFalse(matches1);
 	}
 
 	@Test
 	public void anyAbcTest() {
 		String anyAbc = RString.ANY_ABC;
-		boolean matches = "AB".matches(anyAbc);
+		boolean matches = "A".matches(anyAbc);
 		assertTrue(matches);
-		boolean matches1 = "ab".matches(anyAbc);
+		boolean matches1 = "a".matches(anyAbc);
 		assertFalse(matches1);
 	}
 
 	@Test
 	public void anyabcTest() {
 		String anyAbc = RString.ANY_abc;
-		boolean matches = "ab".matches(anyAbc);
+		boolean matches = "a".matches(anyAbc);
 		assertTrue(matches);
-		boolean matches1 = "aB".matches(anyAbc);
+		boolean matches1 = "B".matches(anyAbc);
 		assertFalse(matches1);
 	}
 

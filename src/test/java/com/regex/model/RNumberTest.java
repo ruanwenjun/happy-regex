@@ -13,15 +13,15 @@ public class RNumberTest {
 	@Test
 	public void anyNumberTest() {
 		String anyNum = RNumber.ANY_NUM;
-		boolean matches = "1234".matches(anyNum);
+		boolean matches = "1".matches(anyNum);
 		assertTrue(matches);
-		boolean matches1 = "1234a".matches(anyNum);
+		boolean matches1 = "a".matches(anyNum);
 		assertFalse(matches1);
 	}
 
 	@Test
 	public void lenNumberTest() {
-		String nNum = RNumber.ANY_LUN_NUM;
+		String nNum = RNumber.LEN_NUM;
 		boolean matches = "1234".matches(String.format(nNum, 4));
 		assertTrue(matches);
 		boolean matches1 = "1234".matches(String.format(nNum, 3));
