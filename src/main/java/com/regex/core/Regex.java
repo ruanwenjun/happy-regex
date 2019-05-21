@@ -1,13 +1,11 @@
 package com.regex.core;
 
-import com.sun.org.apache.regexp.internal.RE;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @author weruan
- * @date 2019-05-19
  */
 public class Regex {
 

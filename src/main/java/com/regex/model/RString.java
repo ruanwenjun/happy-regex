@@ -2,7 +2,6 @@ package com.regex.model;
 
 /**
  * @author weruan
- * @date 2019-05-19
  */
 public class RString {
 

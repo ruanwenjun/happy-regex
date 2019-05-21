@@ -6,7 +6,6 @@ import static junit.framework.Assert.*;
 
 /**
  * @author weruan
- * @date 2019-05-19
  */
 public class RDateTest {
 

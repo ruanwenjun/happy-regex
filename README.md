@@ -11,6 +11,15 @@ And happy-regex pre supply some common regex.
 
 happy-regex use simple Java api to build a regex , in the future will support to used by maven or gradle
 
+add maven dependency
+```
+<dependency>
+  <groupId>com.github.ruanwenjun</groupId>
+  <artifactId>happy-regex</artifactId>
+  <version>1.0.1</version>
+</dependency>
+```
+
 example 1:
 ```
 Regex regex = Regex.builder()
