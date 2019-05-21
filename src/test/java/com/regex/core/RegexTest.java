@@ -62,4 +62,17 @@ public class RegexTest {
 		boolean matches = "112.169.192.192".matches(regexString);
 		assertTrue(matches);
 	}
+
+	@Test
+	public void testEx() {
+		String s = "***github***.cn";
+		Regex regex = Regex.builder()
+			.add(RString.anyLenString())
+			.add("github")
+			.add(RString.anyLenString())
+			.or(".cn", ".com")
+			.build();
+		boolean matches = s.matches(regex.toRegexString());
+		assertTrue(matches);
+	}
 }

@@ -46,9 +46,9 @@ public class Regex {
 				throw new RuntimeException("args can not be null");
 			}
 			StringBuilder sb = new StringBuilder();
-			sb.append("[");
+			sb.append("(");
 			sb.append(String.join("|", string));
-			sb.append("]");
+			sb.append(")");
 			list.add(sb.toString());
 			return this;
 		}
