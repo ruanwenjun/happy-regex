@@ -7,6 +7,38 @@ With happy-regex, you don't need to query regex expression rules to generate usa
 
 And happy-regex pre supply some common regex.
 
+# How to use
+
+happy-regex use simple Java api to build a regex , in the future will support to used by maven or gradle
+
+example 1:
+```
+Regex regex = Regex.builder()
+			.add(RNumber.lenNum(3))
+			.add(".")
+			.add(RNumber.lenNum(3))
+			.add(".")
+			.add(RNumber.lenNum(3))
+			.add(".")
+			.add(RNumber.lenNum(3))
+			.build();
+		String regexString = regex.toRegexString();
+		boolean matches = "112.169.192.192".matches(regexString);
+		assertTrue(matches);
+```
+example 2:
+```
+Regex regex = Regex.builder()
+			.add(RDate.yyyy_MM_dd)
+			.add(" ")
+			.addExtract(RString.anyLenString())
+			.build();
+		String format = "2019-05-21 16:17:18";
+		Pattern pattern = Pattern.compile(regex.toRegexString());
+		Matcher matcher = pattern.matcher(format);
+		assertTrue(matcher.find());
+		assertEquals("16:17:18", matcher.group(1));
+```
 
 # Contributing
 

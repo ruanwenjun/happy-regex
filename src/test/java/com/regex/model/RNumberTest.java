@@ -12,7 +12,7 @@ public class RNumberTest {
 
 	@Test
 	public void anyNumberTest() {
-		String anyNum = RNumber.ANY_NUM;
+		String anyNum = RNumber.anyNum();
 		boolean matches = "1".matches(anyNum);
 		assertTrue(matches);
 		boolean matches1 = "a".matches(anyNum);
@@ -21,19 +21,17 @@ public class RNumberTest {
 
 	@Test
 	public void lenNumberTest() {
-		String nNum = RNumber.LEN_NUM;
-		boolean matches = "1234".matches(String.format(nNum, 4));
+		boolean matches = "1234".matches(RNumber.lenNum(4));
 		assertTrue(matches);
-		boolean matches1 = "1234".matches(String.format(nNum, 3));
+		boolean matches1 = "1234".matches(RNumber.lenNum(3));
 		assertFalse(matches1);
 	}
 
 	@Test
 	public void moreLenNumberTest() {
-		String moreNNumber = RNumber.MORE_LEN_NUM;
-		boolean matches = "1234".matches(String.format(moreNNumber, 4));
+		boolean matches = "1234".matches(RNumber.moreLenNum(4));
 		assertTrue(matches);
-		boolean matches1 = "1234".matches(String.format(moreNNumber, 5));
+		boolean matches1 = "1234".matches(RNumber.moreLenNum(5));
 		assertFalse(matches1);
 	}
 }

@@ -1,5 +1,7 @@
 package com.regex.core;
 
+import com.sun.org.apache.regexp.internal.RE;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +23,9 @@ public class Regex {
 
 	public String toRegexString() {
 		StringBuilder sb = new StringBuilder();
+		sb.append("^");
 		regex.forEach(sb::append);
+		sb.append("$");
 		return sb.toString();
 	}
 
@@ -54,6 +58,15 @@ public class Regex {
 			return this;
 		}
 
+		/**
+		 * can extract whose match the given string
+		 */
+		public RegexBuilder addExtract(String string) {
+			list.add("(");
+			list.add(string);
+			list.add(")");
+			return this;
+		}
 
 	}
 }

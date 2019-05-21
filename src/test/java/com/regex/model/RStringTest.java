@@ -12,62 +12,55 @@ public class RStringTest {
 
 	@Test
 	public void anyChineseTest() {
-		String anyChinese = RString.ANY_CHINESE;
-		boolean matches = "中".matches(anyChinese);
+		boolean matches = "中".matches(RString.anyChinese());
 		assertTrue(matches);
-		boolean matches1 = "c".matches(anyChinese);
+		boolean matches1 = "c".matches(RString.anyChinese());
 		assertFalse(matches1);
 	}
 
 	@Test
 	public void anyAbcTest() {
-		String anyAbc = RString.ANY_ABC;
-		boolean matches = "A".matches(anyAbc);
+		boolean matches = "A".matches(RString.anyABC());
 		assertTrue(matches);
-		boolean matches1 = "a".matches(anyAbc);
+		boolean matches1 = "a".matches(RString.anyABC());
 		assertFalse(matches1);
 	}
 
 	@Test
 	public void anyabcTest() {
-		String anyAbc = RString.ANY_abc;
-		boolean matches = "a".matches(anyAbc);
+		boolean matches = "a".matches(RString.anyabc());
 		assertTrue(matches);
-		boolean matches1 = "B".matches(anyAbc);
+		boolean matches1 = "B".matches(RString.anyabc());
 		assertFalse(matches1);
 	}
 
 	@Test
 	public void lenChineseTest() {
-		String lenChinese = RString.LEN_CHINESE;
-		boolean matches = "中国".matches(String.format(lenChinese, 1, 2));
+		boolean matches = "中国".matches(RString.lenChinese(1, 2));
 		assertTrue(matches);
-		boolean matches1 = "中国".matches(String.format(lenChinese, 3, 4));
+		boolean matches1 = "中国".matches(RString.lenChinese(3, 4));
 		assertFalse(matches1);
 	}
 
 	@Test
 	public void anyString() {
-		String anyString = RString.ANY_STRING;
-		boolean matches = " ".matches(anyString);
+		boolean matches = " ".matches(RString.anyString());
 		assertTrue(matches);
-		boolean matches1 = "  ".matches(anyString);
+		boolean matches1 = "  ".matches(RString.anyString());
 		assertFalse(matches1);
 	}
 
 	@Test
 	public void anyLenString() {
-		String anyLenString = RString.ANY_LEN_STRING;
-		boolean matches = " 12*".matches(anyLenString);
+		boolean matches = " 12*".matches(RString.anyLenString());
 		assertTrue(matches);
 	}
 
 	@Test
 	public void lenString() {
-		String lenString = RString.LEN_STRING;
-		boolean matches = "   ".matches(String.format(lenString, 3, 3));
+		boolean matches = "   ".matches(RString.lenString(3, 3));
 		assertTrue(matches);
-		boolean matches1 = "abc ".matches(String.format(lenString, 3, 3));
+		boolean matches1 = "abc ".matches(RString.lenString(3, 3));
 		assertFalse(matches1);
 	}
 }
