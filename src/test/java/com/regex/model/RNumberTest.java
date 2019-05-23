@@ -26,6 +26,12 @@ public class RNumberTest {
 		assertFalse(matches1);
 	}
 
+	@Test(expected = Exception.class)
+	public void lenNumberErrTest() {
+		boolean matches = "123".matches(RNumber.lenNum(0));
+		assertFalse(matches);
+	}
+
 	@Test
 	public void moreLenNumberTest() {
 		boolean matches = "1234".matches(RNumber.moreLenNum(4));

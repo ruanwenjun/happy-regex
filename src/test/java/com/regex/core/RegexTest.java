@@ -64,14 +64,21 @@ public class RegexTest {
 
 	@Test
 	public void testEx() {
-		String s = "***github***.cn";
+		String s = "xx.github.asd.cn";
 		Regex regex = Regex.builder()
-			.add(RString.anyLenString())
-			.add("github")
-			.add(RString.anyLenString())
+			.addExtract(RString.anyLenString())
+			.add(".github.")
+			.addExtract(RString.anyLenString())
 			.or(".cn", ".com")
 			.build();
-		boolean matches = s.matches(regex.toRegexString());
-		assertTrue(matches);
+		String regexString = regex.toRegexString();
+		System.out.println(regexString);
+		Pattern compile = Pattern.compile(regexString);
+		Matcher matcher = compile.matcher(s);
+		matcher.find();
+		String group = matcher.group(1);
+		String group1 = matcher.group(2);
+		System.out.println(group);
+		System.out.println(group1);
 	}
 }
